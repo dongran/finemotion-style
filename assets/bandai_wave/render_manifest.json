@@ -1,0 +1,292 @@
+{
+  "render_script_sha256": "a604856ac3eb96abd85691176697841220c4045a3374a9091a6448d93a8aed70",
+  "source_bvh": "dataset-2_wave-right-hand_normal_001.bvh",
+  "source_sha256": "d0e1907bcaa25c6ee0596a9e652b226c532e9af4c01eb860a4bd7487ab2c7c15",
+  "smpl_npz": "dataset-2_wave-right-hand_normal_001Re.npz",
+  "smpl_sha256": "68c62a0a2d4adfcd1998cb3002754fdd6393b01f630be038dca2ccb63081b40a",
+  "source_fps": 30.000030000029998,
+  "smpl_fps": 30.0,
+  "source_offset_seconds": 0.0,
+  "bvh_scale_to_metres": 0.01,
+  "bvh_position_channels": "replace-offset",
+  "render_fps": 10.0,
+  "frames": 62,
+  "common_duration_seconds": 6.166666666666667,
+  "viewport_per_panel_pixels": [
+    480,
+    480
+  ],
+  "combined_frame_pixels": [
+    960,
+    544
+  ],
+  "source_frame_indices": [
+    0,
+    3,
+    6,
+    9,
+    12,
+    15,
+    18,
+    21,
+    24,
+    27,
+    30,
+    33,
+    36,
+    39,
+    42,
+    45,
+    48,
+    51,
+    54,
+    57,
+    60,
+    63,
+    66,
+    69,
+    72,
+    75,
+    78,
+    81,
+    84,
+    87,
+    90,
+    93,
+    96,
+    99,
+    102,
+    105,
+    108,
+    111,
+    114,
+    117,
+    120,
+    123,
+    126,
+    129,
+    132,
+    135,
+    138,
+    141,
+    144,
+    147,
+    150,
+    153,
+    156,
+    159,
+    162,
+    165,
+    168,
+    171,
+    174,
+    177,
+    180,
+    183
+  ],
+  "smpl_frame_indices": [
+    0,
+    3,
+    6,
+    9,
+    12,
+    15,
+    18,
+    21,
+    24,
+    27,
+    30,
+    33,
+    36,
+    39,
+    42,
+    45,
+    48,
+    51,
+    54,
+    57,
+    60,
+    63,
+    66,
+    69,
+    72,
+    75,
+    78,
+    81,
+    84,
+    87,
+    90,
+    93,
+    96,
+    99,
+    102,
+    105,
+    108,
+    111,
+    114,
+    117,
+    120,
+    123,
+    126,
+    129,
+    132,
+    135,
+    138,
+    141,
+    144,
+    147,
+    150,
+    153,
+    156,
+    159,
+    162,
+    165,
+    168,
+    171,
+    174,
+    177,
+    180,
+    183
+  ],
+  "gif_frame_stride": 1,
+  "gif_frame_duration_ms": 100,
+  "camera": {
+    "azimuth_degrees": 150.0,
+    "elevation_degrees": 9.0,
+    "distance_metres": 3.84029502963711,
+    "target": [
+      -0.15673905611038208,
+      1.0404575169086456,
+      0.16069025546312332
+    ],
+    "shared_matrix": [
+      [
+        -0.8660254037844387,
+        -0.07821723252011542,
+        0.49384417029756883,
+        1.7397682564986334
+      ],
+      [
+        0.0,
+        0.9876883405951378,
+        0.15643446504023087,
+        1.6412120154665844
+      ],
+      [
+        -0.49999999999999994,
+        0.1354762207522686,
+        -0.8553631939770864,
+        -3.1241567669016037
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "fixed_for_all_frames": true
+  },
+  "display_translation_only": {
+    "source_xz_origin": [
+      -0.0125582,
+      0.0,
+      -0.021662300000000002
+    ],
+    "smpl_xz_origin": [
+      -0.01128000020980835,
+      0.0,
+      -0.00048779998905956745
+    ],
+    "initial_ground_alignment_requested": true,
+    "source_y_shift_metres": -0.04248395774616546,
+    "smpl_y_shift_metres": 0.197248637676239
+  },
+  "ground_y_metres": -0.013582562923431397,
+  "cover_time_seconds": 0.9,
+  "contact_times_seconds": [
+    0.0,
+    1.2000000000000002,
+    2.4000000000000004,
+    3.7,
+    4.9,
+    6.1000000000000005
+  ],
+  "smpl_model": {
+    "type": "SMPL",
+    "gender": "neutral",
+    "betas": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "model_assets_included": false,
+    "credit": "Loper et al., SMPL: A Skinned Multi-Person Linear Model, ACM TOG 2015",
+    "website": "https://smpl.is.tue.mpg.de/"
+  },
+  "notes": [
+    "CPU SMPL evaluation; offscreen OpenGL renderer",
+    "No synthetic fist/hand posing, motion repair, heading alignment, or dynamic camera",
+    "Source and target skeleton proportions differ; no size fitting is applied",
+    "Ground alignment, when requested, is a fixed first-frame display translation, not a motion-data correction",
+    "BVH finger channels remain in input; small fingers and dummy joint_Root omitted only from skeleton drawing",
+    "Nearest stored frames used; no motion interpolation",
+    "This visualization is not an accuracy certificate",
+    "Each panel subtracts its own fixed initial root X/Z origin; later root displacement remains unchanged"
+  ],
+  "render_backend": {
+    "platform": "egl",
+    "egl_device": 0,
+    "software_requested": true,
+    "gl_renderer": "llvmpipe (LLVM 20.1.2, 256 bits)"
+  },
+  "geometry_diagnostics_before_display_ground_alignment": {
+    "source_y_range_metres": [
+      0.04248388073602425,
+      1.7334740542475766
+    ],
+    "mesh_y_range_metres": [
+      -0.1988312005996704,
+      1.8852488994598389
+    ],
+    "left_ankle_y_range_metres": [
+      -0.10605061054229736,
+      -0.10561639070510864
+    ],
+    "right_ankle_y_range_metres": [
+      -0.11472576856613159,
+      -0.11357718706130981
+    ],
+    "left_foot_horizontal_span_metres": [
+      0.0009487718343734741,
+      0.004796959459781647
+    ],
+    "right_foot_horizontal_span_metres": [
+      0.003953114151954651,
+      0.002504095435142517
+    ],
+    "source_hips_y_range_metres": [
+      0.93109,
+      0.933192
+    ]
+  },
+  "versions": {
+    "numpy": "1.23.5",
+    "torch": "2.10.0+cpu",
+    "smplx": "0.1.28",
+    "trimesh": "4.11.1",
+    "pyrender": "0.1.45",
+    "Pillow": "12.1.0",
+    "imageio": "2.37.2",
+    "imageio-ffmpeg": "0.6.0"
+  },
+  "source_release_path": "examples/bandai_wave/input/dataset-2_wave-right-hand_normal_001.bvh",
+  "smpl_release_path": "examples/bandai_wave/smpl/dataset-2_wave-right-hand_normal_001Re_30hz.npz"
+}

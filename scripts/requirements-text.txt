@@ -1,0 +1,5 @@
+# Verified on 2026-10-09 with Python 3.9.25.
+# These versions describe the currently installed environment. The exact
+# environment used for every historical caption export has not been recovered.
+spacy==3.8.11
+en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl

@@ -218,3 +218,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Local reconstruction outputs and separately acquired model assets
+work/
+generated/
+body_models/
+models/
+*.fbx
+*.pkl

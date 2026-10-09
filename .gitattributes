@@ -1,0 +1,10 @@
+# Preserve reproducible script hashes across Windows/Linux checkouts.
+* text=auto eol=lf
+
+# Example hashes describe exact distributed bytes, including original BVH.
+examples/** -text whitespace=cr-at-eol
+# Retain original BVH spacing as well as exact bytes.
+*.bvh -whitespace
+*.gif -text
+*.png -text
+*.mp4 -text

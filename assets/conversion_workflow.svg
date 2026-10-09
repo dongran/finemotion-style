@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="236" viewBox="0 0 1080 236" role="img" aria-labelledby="title desc">
+<title id="title">Bandai BVH to SMPL and text preparation</title>
+<desc id="desc">Bandai BVH receives a calibration pose, MotionBuilder characterizes and retargets the source onto SMPL at 120Hz, then the exported motion is converted into SMPL24 parameters and 30Hz data. Motion descriptions receive lemma and POS fields separately.</desc>
+<rect width="1080" height="236" fill="#f6f8fa"/>
+<g font-family="Arial,sans-serif" fill="#24292f">
+<text x="28" y="30" font-size="18" font-weight="700">One source motion, explicit conversion steps</text>
+<g fill="#ffffff" stroke="#d0d7de"><rect x="28" y="54" width="220" height="104" rx="6"/><rect x="296" y="54" width="252" height="104" rx="6"/><rect x="596" y="54" width="232" height="104" rx="6"/><rect x="876" y="54" width="178" height="104" rx="6"/></g>
+<g font-size="17" font-weight="700"><text x="46" y="82">Bandai BVH</text><text x="314" y="82">MotionBuilder</text><text x="614" y="82">SMPL24 parameters</text><text x="894" y="82">Training files</text></g>
+<g font-size="14" fill="#57606a"><text x="46" y="108">Original 30Hz motion</text><text x="46" y="132">Add source T-pose</text><text x="314" y="108">Characterize · retarget</text><text x="314" y="132">Bake / export at 120Hz</text><text x="614" y="108">Axis-angle + translation</text><text x="614" y="132">cm → m · sample to 30Hz</text><text x="894" y="108">20Hz features</text><text x="894" y="132">Paired caption</text></g>
+<g fill="none" stroke="#57606a" stroke-width="2"><path d="M254 107h32m-8-6 8 6-8 6"/><path d="M554 107h32m-8-6 8 6-8 6"/><path d="M834 107h32m-8-6 8 6-8 6"/></g>
+<text x="28" y="194" font-size="14">Text: motion video / source labels → reviewed sentence → spaCy lemma/POS → caption#tokens#start#end</text>
+<text x="28" y="218" font-size="12" fill="#57606a">Conversion method: JoruriPuppet (SIGGRAPH Asia 2025). Source: Bandai Namco Research Inc. · CC BY-NC 4.0 motion.</text>
+</g></svg>

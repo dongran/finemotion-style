@@ -1,0 +1,7 @@
+{
+  "input_directory": "../../work/bandai/bvhForC",
+  "smpl_fbx": "",
+  "only_bvh_name": "dataset-2_wave-right-hand_normal_001.bvh",
+  "bake_fps": 120,
+  "interactive": true
+}

@@ -1,0 +1,9 @@
+# Tested on Python 3.10 (CPU SMPL, Linux Mesa surfaceless EGL).
+# Install torch separately for the appropriate platform; tested torch 2.10.0+cpu.
+numpy==1.23.5
+smplx==0.1.28
+trimesh==4.11.1
+pyrender==0.1.45
+Pillow==12.1.0
+imageio==2.37.2
+imageio-ffmpeg==0.6.0

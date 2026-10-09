@@ -1,0 +1,1 @@
+A person waves their right hand while standing still.#a/DET person/NOUN wave/VERB their/PRON right/ADJ hand/NOUN while/SCONJ stand/VERB still/ADV#0.0#0.0
