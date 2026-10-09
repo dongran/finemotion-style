@@ -8,7 +8,16 @@ with a Bandai-specific calibration pose and HIK mapping. The original source is
 results; the current scripts were also run through a fresh conversion in
 **MotionBuilder 2026**.
 
-![Conversion and annotation stages](../assets/conversion_workflow.svg)
+## Pipeline at a glance
+
+1. **Source preparation** — original Bandai BVH + source T-pose → calibrated BVH (**187 → 188 frames, 30Hz**).
+2. **MotionBuilder retargeting** — source Character → SMPL target Character → baked target BVH (**749 frames, 120Hz**).
+3. **SMPL24 conversion** — canonical target BVH → axis-angle rotations + translations in meters (**748 frames, 120Hz**).
+4. **Release sampling** — every fourth frame, then remove the first sampled frame → SMPL NPZ (**186 frames, 30Hz**).
+
+The downstream files pair a **20Hz HumanML263 motion feature** with a text file
+of the same motion ID. Text preparation follows video/source-label description
+→ visual review → spaCy lemma/POS → `caption#tokens#start#end`.
 
 ## Dependencies and target assets
 

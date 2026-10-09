@@ -28,14 +28,23 @@ SMPL model weights and the characterized target FBX/template are obtained separa
 
 ## BVH to SMPL
 
-![BVH conversion and text preparation workflow](assets/conversion_workflow.svg)
-
 The workflow follows our [JoruriPuppet / SIGGRAPH Asia 2025 processing code](https://github.com/dongran/tempo-changing-music2motion), with a Bandai-specific T-pose and character mapping:
 
-1. Add a calibration T-pose to the source BVH.
-2. In MotionBuilder, characterize the source, connect it to the SMPL target, and bake/export at 120Hz.
-3. Standardize the exported BVH, convert rotations to SMPL24 axis-angle, and convert translations from centimeters to meters.
-4. Apply the recorded sampling/frame-removal rule to obtain the 30Hz motion.
+1. **Prepare the source BVH** — [prepare_bandai.py](scripts/bandai/prepare_bandai.py)
+
+   Original BVH + Bandai calibration T-pose → prepared BVH. One calibration frame is added: **187 → 188 frames at 30Hz**.
+
+2. **Retarget in MotionBuilder** — [PuppetToSmpl_Bandai.py](scripts/bandai/PuppetToSmpl_Bandai.py)
+
+   Characterize the source → connect it to the SMPL target → bake and export the target skeleton. The verified export has **749 frames at 120Hz**.
+
+3. **Convert to SMPL24 parameters** — [finalize_bandai.py](scripts/bandai/finalize_bandai.py)
+
+   Standardize the exported BVH → convert rotations to axis-angle and translations from centimeters to meters. Removing the first export frame gives **748 frames at 120Hz**.
+
+4. **Prepare the release motion** — [to_30hz.py](scripts/bandai/to_30hz.py)
+
+   Sample every fourth frame → remove the first sampled frame → save **186 frames at 30Hz**, with `poses(T,24,3)` and `trans(T,3)`.
 
 See the [conversion walkthrough](docs/BVH_TO_SMPL.md) for commands and the exact frame history. The bundled HumanML263 feature is an archived downstream result; regenerating it requires the method project's motion-processing dependencies and a separately obtained SMPL model.
 
@@ -65,4 +74,14 @@ Code and documentation are MIT licensed. The Bandai source/adapted motion exampl
 
 ## Citation
 
-Please cite the method paper, the Bandai dataset, and the 2025 conversion work where relevant. Entries are provided in [CITATIONS.bib](CITATIONS.bib). The current method citation is provisional and follows the project page.
+If you use FineMotion-Style in your research, please cite our paper:
+
+```bibtex
+@inproceedings{dong2026kinematic,
+  title={Learning Kinematic Frequency-Aware Disentanglement for Motion Style Transfer and Editing},
+  author={Dong, Ran and Xie, Haoran and Yang, Xi},
+  booktitle={SIGGRAPH Asia 2026 Conference Papers},
+  year={2026},
+  note={to appear}
+}
+```
