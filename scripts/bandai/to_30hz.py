@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Reproduce the verified Bandai example's 120Hz -> 30Hz arrays.
+"""Optional helper to reproduce the archived Bandai example's 30Hz copy.
 
 Historical conversion first removes one 120Hz frame in the BVH finalizer;
 this command takes every fourth frame, then removes one more 30Hz frame.

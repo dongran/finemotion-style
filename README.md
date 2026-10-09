@@ -19,7 +19,7 @@ The example was selected after reviewing five simple Bandai motions. Standing an
 ## What is included
 
 - Original BVH, a Bandai-skeleton T-pose, and the prepared MotionBuilder input.
-- Archived 120Hz and 30Hz SMPL24 motion parameters: `poses(T,24,3)` in axis-angle radians and `trans(T,3)` in meters.
+- Archived SMPL24 motion parameters at the example's 120Hz conversion rate, plus a 30Hz resampled copy: `poses(T,24,3)` in axis-angle radians and `trans(T,3)` in meters.
 - A matching 20Hz HumanML263 feature file and a reviewed caption with lemma/POS tags.
 - Source-specific HIK mapping, conversion entry points, a text formatter, and a genuine BVH/SMPL renderer.
 - File hashes, conversion settings, validation records, and source/license notices.
@@ -34,7 +34,7 @@ The workflow follows our [JoruriPuppet / SIGGRAPH Asia 2025 processing code](htt
 
    Original BVH + Bandai calibration T-pose → prepared BVH. One calibration frame is added: **187 → 188 frames at 30Hz**.
 
-2. **Retarget in MotionBuilder** — [PuppetToSmpl_Bandai.py](scripts/bandai/PuppetToSmpl_Bandai.py)
+2. **Retarget in MotionBuilder** — [BVHtoSmpl_Bandai.py](scripts/bandai/BVHtoSmpl_Bandai.py)
 
    Characterize the source → connect it to the SMPL target → bake and export the target skeleton. The verified export has **749 frames at 120Hz**.
 
@@ -42,11 +42,9 @@ The workflow follows our [JoruriPuppet / SIGGRAPH Asia 2025 processing code](htt
 
    Standardize the exported BVH → convert rotations to axis-angle and translations from centimeters to meters. Removing the first export frame gives **748 frames at 120Hz**.
 
-4. **Prepare the release motion** — [to_30hz.py](scripts/bandai/to_30hz.py)
-
-   Sample every fourth frame → remove the first sampled frame → save **186 frames at 30Hz**, with `poses(T,24,3)` and `trans(T,3)`.
-
 See the [conversion walkthrough](docs/BVH_TO_SMPL.md) for commands and the exact frame history. The bundled HumanML263 feature is an archived downstream result; regenerating it requires the method project's motion-processing dependencies and a separately obtained SMPL model.
+
+**Choose the sampling rate for your task.** Our training uses **20Hz HumanML263 features**. Other pipelines can use a different rate, including a higher rate, with corresponding feature-processing and model settings. The optional [30Hz example](docs/BVH_TO_SMPL.md#optional-reproduce-the-archived-30hz-variant) shows how the bundled resampled copy was made; its extra frame removal belongs to this example's calibration history.
 
 ## Text that a HumanML-style loader can read
 

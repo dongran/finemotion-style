@@ -91,7 +91,7 @@ Invalid fields, tokens, non-finite times, and empty nonzero intervals are reject
 
 The inspected MCM-LDM `Text2MotionDatasetV2` reads all caption lines. Whole-clip descriptions are sampled with `random.choice`; it does not give MAIN a higher priority or automatically merge MAIN and DETAILS. A standalone details sentence must therefore describe enough of the action for its intended use.
 
-The current loader uses a 20Hz feature timeline for nonzero time intervals. Its default `MAX_TEXT_LEN=20` truncates token lists before adding `sos/OTHER` and `eos/OTHER`; the complete sentence is still returned. Do not insert these special tokens into the text file yourself.
+The current training features and inspected loader use a 20Hz timeline for nonzero time intervals. If you build features at another rate, update the feature construction and the loader's seconds-to-frame conversion together; text time fields remain in seconds. The loader's default `MAX_TEXT_LEN=20` truncates token lists before adding `sos/OTHER` and `eos/OTHER`; the complete sentence is still returned. Do not insert these special tokens into the text file yourself.
 
 `WordVectorizer` constructs word vectors and POS features. In the inspected motion-transfer implementation, these feed the text-motion evaluation path, while diffusion training conditions are obtained from motion. MotionCLIP text inference separately encodes the original sentence. Use the annotations according to the training/evaluation task; POS tagging itself is not an action-class supervision scheme.
 
